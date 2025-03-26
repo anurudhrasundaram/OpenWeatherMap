@@ -2,6 +2,39 @@
 The Weather App is a simple Python-based application that fetches and displays real-time weather data for any city using the OpenWeatherMap API. This project is perfect for beginners looking to learn how to work with APIs and handle JSON data in Python.
 import requests
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub README Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .markdown-body {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+</head>
+<body>
+    <div id="content" class="markdown-body"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        async function fetchReadme() {
+            const response = await fetch('https://raw.githubusercontent.com/anurudhrasundaram/anurudhrasundaram/main/README.md');
+            const text = await response.text();
+            document.getElementById('content').innerHTML = marked(text);
+        }
+
+        fetchReadme();
+    </script>
+</body>
+</html>
+
 def get_weather(city_name, api_key):
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     params = {
